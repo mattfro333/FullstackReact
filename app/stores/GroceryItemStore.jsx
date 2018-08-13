@@ -19,6 +19,7 @@ function GroceryItemStore(){
   }
 
   function addGroceryItem(item){
+    console.log('hi');
     console.log(item);
       items.push(item);
       triggerListeners();
@@ -46,7 +47,7 @@ function GroceryItemStore(){
 
   dispatcher.register(function(event){
     var split = event.type.split(':');
-      if (split[0]==='groceryitem'){
+      if (split[0]==='grocery-item'){
         switch(split[1]){
           case "add":
                 addGroceryItem(event.payload);

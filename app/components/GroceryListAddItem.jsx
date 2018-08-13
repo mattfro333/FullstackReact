@@ -12,6 +12,7 @@ module.exports = React.createClass({
     e.preventDefault();
     // console.log("Adding item!", this.state.input)
     console.log("yo");
+    console.log(e);
     action.add({
       name:this.state.input
     });
