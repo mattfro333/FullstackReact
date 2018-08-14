@@ -9,5 +9,8 @@ var items = [{
   },{
     name:"Snacks"
 }];
-  app.route('/api/')
+  app.route('/api/items')
+  .get(function(req,res){
+    res.send(items);
+  })
 }
