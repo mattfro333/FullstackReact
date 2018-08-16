@@ -2,6 +2,7 @@ const express = require('express');
 
 const app = new express();
 const parser = require('body-parser');
+require('./database.js');
 app.get('/', function(req,res){
     res.render('./../app/index.ejs', {});
 })
