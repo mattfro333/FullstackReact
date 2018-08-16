@@ -13,4 +13,8 @@ var items = [{
   .get(function(req,res){
     res.send(items);
   })
+  .post(function(req,res){
+    var item = req.body;
+    items.push(item);
+  })
 }

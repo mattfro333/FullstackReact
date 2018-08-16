@@ -17,10 +17,11 @@ function GroceryItemStore(){
   }
 
   function addGroceryItem(item){
-    console.log('hi');
-    console.log(item);
+    // console.log('hi');
       items.push(item);
       triggerListeners();
+
+      helper.post("api/items",item);
   }
 
   function deleteGroceryItem(item){
