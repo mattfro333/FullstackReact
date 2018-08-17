@@ -33,6 +33,8 @@ function GroceryItemStore(){
     });
     items.splice(index,1);
     triggerListeners();
+
+    helper.del('api/items'+item._id);
   }
 
   function setGroceryItemBought(item, isBought){
@@ -40,6 +42,7 @@ function GroceryItemStore(){
         return a.name == item.name})[0];
         item.purchased = isBought || false;
         triggerListeners();
+      helper.patch('api/items/'+item._id,item);
   }
 
   function onChange(listener){
