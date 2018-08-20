@@ -4,10 +4,11 @@ const app = new express();
 const parser = require('body-parser');
 const React = require('react/addons');
 var GroceryItem = require('./models/GroceryItem.js');
+require('babel/register');
 require('./database.js');
 app.get('/', function(req,res){
     // res.render('./../app/index.ejs', {});
-var application = React.createfactory(require('./../app/components/GroceryItemList.jsx'))
+var application = React.createFactory(require('./../app/components/GroceryItemList.jsx'))
 
       GroceryItem.find(function(error,doc){
           var generated = React.renderToString(application({

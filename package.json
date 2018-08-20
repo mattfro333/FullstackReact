@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/mattfro333/FullstackReact#readme",
   "dependencies": {
+    "babel": "^6.23.0",
+    "babel-register": "^6.26.0",
     "body-parser": "^1.18.3",
     "browser-sync": "^2.24.6",
     "browserify": "^16.2.2",
