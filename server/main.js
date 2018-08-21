@@ -3,20 +3,10 @@ const express = require('express');
 const app = new express();
 const parser = require('body-parser');
 const React = require('react/addons');
-var GroceryItem = require('./models/GroceryItem.js');
-require('babel/register');
+const GroceryItem = require('./models/GroceryItem.js');
 require('./database.js');
 app.get('/', function(req,res){
-    // res.render('./../app/index.ejs', {});
-var application = React.createFactory(require('./../app/components/GroceryItemList.jsx'))
-
-      GroceryItem.find(function(error,doc){
-          var generated = React.renderToString(application({
-            items:doc
-          }))
-          res.redner('./../app/index.ejs', {reactOutput:generated});
-      })
-
+    res.render('./../app/index.ejs', {});
 })
 .use(express.static(__dirname + '/../.tmp'))
 .listen(7777)
